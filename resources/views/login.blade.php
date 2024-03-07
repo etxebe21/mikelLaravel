@@ -7,7 +7,7 @@
     <x-slot name="title">Inicio de Sesión</x-slot>
             <form action="">
                 <div>
-                    <label class="text-sm text-gray-700">Email</label>
+                    <x-label>Email</x-label>
                     <input type="text" name="email" 
                     class="rounded shadow border border-gray-300 p-2 mt-1 w-full "> 
                 </div>

@@ -8,17 +8,17 @@
 
                 <form action="">
                     <div>
-                        <label class="text-sm text-gray-700">Nombre</label>
+                        <x-label>Name</x-label>
                         <input type="text" name="name" 
                         class="rounded shadow border border-gray-300 p-2 mt-1 w-full "> 
                     </div>
                     <div>
-                        <label class="text-sm text-gray-700">Email</label>
+                        <x-label>Email</x-label>
                         <input type="text" name="email" 
                             class="rounded shadow border border-gray-300 p-2 mt-1 w-full "> 
                     </div>
                     <div>
-                        <label class="text-sm text-gray-700">Password</label>
+                        <x-label>Password</x-label>
                         <input type="password" name="password" 
                             class="rounded shadow border border-gray-300 p-2 mt-1 w-full "> 
                     </div>
