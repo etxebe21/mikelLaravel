@@ -22,7 +22,8 @@
 
                     <div class="flex items-center gap-4 justify-end mt-8">
                         <x-link href="/login">Estoy registrado</x-link>
-                        <x-button>Registrarse</x-button>                       </div>
+                        <x-button>Registrarse</x-button>                       
+                    </div>
                 </form>
 </x-wrapper>
 @endsection
