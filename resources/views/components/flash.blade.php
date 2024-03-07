@@ -15,4 +15,5 @@
     <div>
         <span class="font-medium capitalize">{{ $type }}</span>
     </div>
+    : {{ $slot }}
 </div>
