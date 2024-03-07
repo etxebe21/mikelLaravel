@@ -8,13 +8,11 @@
             <form action="">
                 <div>
                     <x-label>Email</x-label>
-                    <input type="text" name="email" 
-                    class="rounded shadow border border-gray-300 p-2 mt-1 w-full "> 
+                    <x-input type="text" name="email"></x-input> 
                 </div>
                 <div>
-                    <label class="text-sm text-gray-700">Password</label>
-                    <input type="password" name="password" 
-                    class="rounded shadow border border-gray-300 p-2 mt-1 w-full "> 
+                    <x-label>Password</x-label>
+                    <x-input type="password" name="password"></x-input> 
                 </div>
 
                 <div class="flex items-center gap-4 justify-end mt-8">

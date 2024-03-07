@@ -1,5 +1,5 @@
-<label class="text-sm text-gray-700">
+<label class="text-sm text-gray-700 italic">
 
-    {{ $slot }}
+    {{ $slot }}:
 
 </label>
