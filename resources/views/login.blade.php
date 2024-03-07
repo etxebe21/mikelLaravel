@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>LOGIN</title>
-        <script src="https://cdn.tailwindcss.com"></script>
+@extends('template')
 
-    </head>
-    <body>
+@section('content')
+
         <div class="h-screen flex flex-col justify-center items-center bg-blue-100">
             <h1 class="mb-6 text-2xl">Inicio de sesión</h1>
             <div class="w-full sm:max-w-md py-4 px-6 bg-white shadow sm:rounded">
@@ -33,3 +26,4 @@
         </div>
     </body>
 </html>
+@endsection
