@@ -17,7 +17,7 @@
 
                 <div class="flex items-center gap-4 justify-end mt-8">
                     <x-link href="/register">Registrarse</x-link>
-                    <button type="submit" class="px-4 py-2 bg-blue-600 sm:rounded">Iniciar sesión</button>
+                    <x-button>Iniciar Sesión</x-button>     
                 </div>
             </form>
 </x-wrapper>
