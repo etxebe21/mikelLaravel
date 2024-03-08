@@ -39,5 +39,17 @@
         ></x-card>
     </div>
 
+    <div>
+    <hr class="my-4">
+    <x-youtube url="https://www.youtube.com/embed/thCwKk3nyJE?si=C0kfnZnbw2zJHNG7"></x-youtube>
+
+    <hr class="my-4">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            <x-youtube url="https://www.youtube.com/embed/thCwKk3nyJE?si=C0kfnZnbw2zJHNG7"></x-youtube>
+            <x-youtube url="https://www.youtube.com/embed/thCwKk3nyJE?si=C0kfnZnbw2zJHNG7"></x-youtube>
+            <x-youtube url="https://www.youtube.com/embed/thCwKk3nyJE?si=C0kfnZnbw2zJHNG7"></x-youtube>
+            <x-youtube url="https://www.youtube.com/embed/thCwKk3nyJE?si=C0kfnZnbw2zJHNG7"></x-youtube>
+        </div>
+    </div>
 </div>
 @endsection
