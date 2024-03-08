@@ -5,6 +5,9 @@
         <x-nav.link href="#">Cursos</x-nav.link>
         <x-nav.link href="#">Planes</x-nav.link>
         <x-nav.link href="#">Documentos</x-nav.link>
+        <x-nav.link href="/" class="rounded-full px-3 py-1 bg-gray-900 text-white hover:bg-gray-200 border-2 border-gray-800">Login</x-nav.link>
+        <x-nav.link href="/register" class="rounded-full px-3 py-1 border-2 border-gray-800">Register</x-nav.link>
+
 </x-nav>
 
 <div class="container mx-auto px-4">
@@ -23,18 +26,21 @@
             img="https://images.unsplash.com/photo-1623479322729-28b25c16b011"
             date="Septiembre, 2015"
             title="TITULO"
+            slug="enlace-1"
             content="TITULO"
         ></x-card>
         <x-card
             img="https://plus.unsplash.com/premium_photo-1661713438592-42a763d67cd6"            
             date="Septiembre, 2015"
             title="TITULO"
+            slug="enlace-2"
             content="TITULO"
         ></x-card>
         <x-card
             img="https://images.unsplash.com/photo-1629904853716-f0bc54eea481"
             date="Septiembre, 2015"
             title="TITULO"
+            slug="enlace-3"
             content="TITULO que tiene esta tarjeta para comprobar si la card mantiene su tamaño"
         ></x-card>
     </div>

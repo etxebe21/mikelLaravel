@@ -6,6 +6,6 @@
             {{ $title }}
         </h3>
         <p class="text-gray-600">{{$content}}</p>
-        <a href="#" class="mt-3 block">Leer más</a>
+        <a href="{{ $slug }}" class="mt-3 block">Leer más</a>
     </div>
 </div>
