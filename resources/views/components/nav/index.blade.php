@@ -4,7 +4,7 @@
     ])
 }}>
 
-    <a href="/" class="text-2xl text-gray-600 hover:text-gray-900 "> Home</a>
+    <a href="/examples" class="text-2xl text-gray-600 hover:text-gray-900 "> Home</a>
 
     <ul class="flex gap-2 flex-col sm:flex-row">
         {{ $slot }}

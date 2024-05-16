@@ -1,4 +1,6 @@
 <?php
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -13,14 +15,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('register', function () {
+Route::get('/register', function () {
     return view('register');
 });
 
-Route::get('examples', function(){
+Route::get('/examples', function(){
     return view('examples');
+})->name('examples');
+
+Route::get('/home', function () {
+    return view('home');
 });
+
+// Ruta para mostrar el formulario de inicio de sesión
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+
+// Ruta para manejar el envío del formulario de inicio de sesión (POST)
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);

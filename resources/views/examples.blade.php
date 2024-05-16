@@ -1,13 +1,32 @@
 @extends('template')
 
 @section('content')
+<!-- Barra de navegación principal -->
 <x-nav class="mb-4">
-        <x-nav.link href="#">Cursos</x-nav.link>
-        <x-nav.link href="#">Planes</x-nav.link>
-        <x-nav.link href="#">Documentos</x-nav.link>
-        <x-nav.link href="/" class="rounded-full px-3 py-1 bg-gray-900 text-white hover:bg-gray-200 border-2 border-gray-800">Login</x-nav.link>
-        <x-nav.link href="/register" class="rounded-full px-3 py-1 border-2 border-gray-800">Register</x-nav.link>
-
+    <x-nav.link href="#">Cursos</x-nav.link>
+    <x-nav.link href="#">Planes</x-nav.link>
+    <x-nav.link href="#">Documentos</x-nav.link>
+    <div class="dropdown">
+        <span onclick="toggleDropdown()" class="dropdown-toggle">
+            @if(auth()->check())
+                {{ auth()->user()->email }}
+            @else
+                Guest
+            @endif
+        </span>
+        <div id="userDropdown" class="dropdown-menu hidden">
+            @if(auth()->check())
+                <a href="#">Ir al perfil</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit">Cerrar sesión</button>
+                </form>
+            @else
+                <a href="/login">Iniciar sesión</a>
+                <a href="/register">Registrarse</a>
+            @endif
+        </div>
+    </div>
 </x-nav>
 
 <div class="container mx-auto px-4">
@@ -58,4 +77,19 @@
         </div>
     </div>
 </div>
+
+<script>
+    function toggleDropdown() {
+        var dropdownMenu = document.getElementById("userDropdown");
+        dropdownMenu.classList.toggle("hidden");
+    }
+
+    // Cerrar el menú cuando se hace clic en cualquier lugar fuera del menú
+    window.onclick = function(event) {
+        var dropdownMenu = document.getElementById("userDropdown");
+        if (dropdownMenu.classList.contains("hidden") === false && !event.target.matches('.dropdown-toggle')) {
+            dropdownMenu.classList.add("hidden");
+        }
+    }
+</script>
 @endsection
