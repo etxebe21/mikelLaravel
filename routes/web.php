@@ -1,7 +1,9 @@
 <?php
+
+use App\Http\Controllers\EdificiosController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-
+use App\Http\Controllers\RoutesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -41,3 +43,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
+
+Route::get('/lista-edificios', [RoutesController::class, 'verEdificios'])->name('lista-edificios');
