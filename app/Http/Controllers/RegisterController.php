@@ -1,40 +1,34 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
     public function showRegistrationForm()
     {
-        return view('register');
+        return view('auth.register');
     }
 
     public function register(Request $request)
     {
-        // Validar datos
         $request->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:6',
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:users',
+            'password' => 'required|string|min:6|confirmed',
         ]);
 
-        try {
-            // Crear nuevo usuario
-            $user = new User();
-            $user->name = $request->name;
-            $user->email = $request->email;
-            $user->password = Hash::make($request->password);
-            $user->save();
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
 
-            // Redirigir al usuario a alguna página después de registrarse
-            return redirect('/login')->with('success', '¡Registro exitoso! Por favor inicie sesión.');
-        } catch (\Exception $e) {
-            // Si hay algún error, redirigir al usuario de vuelta al formulario de registro con un mensaje de error
-            return back()->withInput()->withErrors(['error' => 'Se produjo un error al intentar registrar el usuario. Por favor, inténtelo de nuevo más tarde.']);
-        }
+        Auth::login($user);
+
+        return redirect('/home');
     }
 }

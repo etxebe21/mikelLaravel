@@ -9,7 +9,7 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('login');
+        return view('auth.login');
     }
 
     public function login(Request $request)
@@ -19,15 +19,15 @@ class LoginController extends Controller
             'email' => 'required|email',
             'password' => 'required',
         ]);
-
+    
         // Intentar autenticar al usuario
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            // Si la autenticación es exitosa, redirigir al usuario a su área protegida
-            return redirect('/home');
+            // Autenticación exitosa
+            return redirect()->intended('/home'); // Redirigir a la URL previa o una URL predeterminada
         }
-
-        // Si la autenticación falla, redirigir al usuario de vuelta al formulario de inicio de sesión con un mensaje de error
-        return back()->withInput()->withErrors(['error' => 'Las credenciales proporcionadas son incorrectas.']);
+    
+        // Autenticación fallida
+        return back()->withInput()->withErrors(['error' => 'Credenciales incorrectas.']);
     }
 
     public function logout(Request $request)
