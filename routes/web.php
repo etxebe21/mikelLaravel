@@ -27,4 +27,5 @@ Route::get('/home', [RoutesController::class, 'index'])->name('home');
     Route::get('/examples', function(){return view('examples');})->name('examples');
 
     Route::get('/lista-edificios', [RoutesController::class, 'verEdificios'])->name('lista-edificios');
+    Route::get('/lista-proyectos', [RoutesController::class, 'verProyectos'])->name('lista-proyectos');
 });

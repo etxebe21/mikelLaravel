@@ -18,10 +18,15 @@ class RoutesController extends Controller
     }
 
     public function verEdificios(){
-        
-            // $proyecto = (new proyectosController)->infoProyecto($ID_PROYECTO);
-            $edificios = (new EdificiosController)->getEdificios();
-            return view('listaEdificios', ['edificios'=>$edificios]);
-        }
+        $proyectos = (new proyectosController)->getProyectos();
+        $edificios = (new EdificiosController)->getEdificios();
+        return view('listaEdificios', ['edificios'=>$edificios, 'proyectos'=>$proyectos]);
+    }
        
+    public function verProyectos(){
+         $proyectos = (new proyectosController)->getProyectos();
+        //$edificios = (new EdificiosController)->getEdificios();
+        return view('listaProyectos', ['proyectos'=>$proyectos]);
+    }
+
 }

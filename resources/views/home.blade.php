@@ -56,7 +56,7 @@
     <div class="col-span-2">
         <div
             class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-            {{-- <a href="{{route('examples')}}"> --}}
+            <a href="{{route('examples')}}">
                 <div
                     class="relative overflow-hidden overflow-y-hidden bg-cover bg-no-repeat min-h-[150px] max-h-[150px]"
                     style="background-image: url({{URL::asset('assets/images/card-bg/newProyecto.jpg')}}); background-size:cover; background-position:center"
