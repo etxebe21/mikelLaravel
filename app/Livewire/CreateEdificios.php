@@ -94,15 +94,15 @@ class CreateEdificios extends Component
     }
 
     public function actualizarIdProyecto($value)
-{
-    // Dividir el valor seleccionado para obtener el nombre y el ID del proyecto
-    $partes = explode('|', $value);
-    $nombreProyecto = $partes[0];
-    $idProyecto = $partes[1];
+    {
+        // Dividir el valor seleccionado para obtener el nombre y el ID del proyecto
+        $partes = explode('|', $value);
+        $nombreProyecto = $partes[0];
+        $idProyecto = $partes[1];
 
-    // Actualizar las propiedades del componente con los valores obtenidos
-    $this->NOMBRE_PROYECTO = $nombreProyecto;
-    $this->ID_PROYECTO = $idProyecto;
-}
+        // Actualizar las propiedades del componente con los valores obtenidos
+        $this->NOMBRE_PROYECTO = $nombreProyecto;
+        $this->ID_PROYECTO = $idProyecto;
+    }
 
 }

@@ -300,7 +300,14 @@
                     <div class="shadow sm:overflow-hidden sm:rounded-md">
                         <div class="space-y-6 bg-white px-1 py-1 sm:p-6">
                             <div class="grid grid-cols-6">
-                                <div class="col-span-3 text-center">
+                                <div class="col-span-1">
+                                    <button type="button"
+                                    wire:click="showStep(3)"
+                                    class="focus:outline-none w-full text-white bg-orange-600 hover:bg-orange-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-lg block px-5 py-2.5 me-2 mb-2 @if($checkform==false) opacity-50 hover:cursor-none @endif" @if($checkform==false) disabled @endif>
+                                     Volver</button>
+
+                                </div>
+                                <div class="col-span-2 text-center">
                                     <div class="flex justify-center items-center mb-4">
                                         <input id="checkform-checkbox" type="checkbox" wire:model="checkform" wire:click="comprobarForm" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
                                         <label for="checkform-checkbox" class="ms-2 text-medium font-medium text-gray-900">¿Quiere guardar el edificio?</label>
