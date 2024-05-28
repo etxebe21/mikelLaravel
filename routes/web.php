@@ -26,5 +26,7 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::get('/lista-viviendas', [RoutesController::class, 'verViviendas'])->name('lista-viviendas');
     Route::get('/crear-proyecto', [RoutesController::class, 'crearProyecto'])->name('crear-proyecto');
     Route::get('/crear-edificio', [RoutesController::class, 'crearEdificio'])->name('crear-edificio');
+    Route::get('/crear-vivienda', [RoutesController::class, 'crearVivienda'])->name('crear-vivienda');
+
 
 });

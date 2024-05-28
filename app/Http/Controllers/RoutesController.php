@@ -47,4 +47,10 @@ class RoutesController extends Controller
 
         return view('createEdificio', ['proyectos'=>$proyectos]);
     }
+
+    public function crearVivienda(){
+        $edificios = (new EdificiosController)->getEdificios();
+
+        return view('createVivienda', ['edificios'=>$edificios]);
+    }
 }
