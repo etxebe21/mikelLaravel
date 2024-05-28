@@ -38,6 +38,7 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::get('/eliminar-proyecto/{id}', [ProyectosController::class, 'deleteProyecto'])->name('eliminar-proyecto');
     Route::get('/eliminar-edificio/{id}', [EdificiosController::class, 'deleteEdificio'])->name('eliminar-edificio');
     Route::get('/eliminar-vivienda/{id}', [ViviendasController::class, 'deleteVivienda'])->name('eliminar-vivienda');
+    Route::get('/eliminar-usuario/{id}', [LoginController::class, 'deleteUsuario'])->name('eliminar-usuario');
 
 
 });

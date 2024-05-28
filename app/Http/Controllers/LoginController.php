@@ -46,5 +46,13 @@ class LoginController extends Controller
             ->get();
         return $usuarios;
     }
+
+    public function deleteUsuario($id)
+    {
+        
+        DB::table('users')->where('id', $id)->delete();
+
+        return redirect()->route('lista-usuarios')->with('success', 'El y sus datos relacionados han sido eliminados exitosamente.');
+    }
 }
 
