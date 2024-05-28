@@ -60,7 +60,6 @@
                         <td class="px-6 py-4 text-center">{{$edificio->YEAR_CONSTRUCCION}}</td>
                         <td class="px-2 py-4 text-center">{{$edificio->CALIFICACION_ENERGETICA}}</td>
                         <td class="px-2 py-4 text-center">{{$edificio->N_VIVIENDAS}}</td>
-                        {{-- <td class="px-2 py-4 text-center">{{$edificio->MONITORIZADAS}}</td> --}}
                         <td class="whitespace-nowrap px-2 py-4 text-right"> 
                                 <button id="dropdownInformationButton_{{$key}}" data-dropdown-toggle="dropdownInformation_{{$key}}"
                                 class="text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xl px-5 py-3 text-center inline-flex items-center " type="button">
@@ -71,27 +70,27 @@
                                 </button>
                                     <!-- Dropdown menu -->
                                 <div id="dropdownInformation_{{$key}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-96 ">
-                                    <div class="px-4 py-3 text-sm bg-plat-green text-white ">
+                                    <div class="px-4 py-3 text-md bg-plat-green text-black ">
                                         <div>OPCIONES</div>
                                         <div class="font-medium text-xs truncate">{{$edificio->CODIGO_EDIFICIO}}</div>
                                     </div>
                                     <ul class="text-lg text-white font-medium" aria-labelledby="dropdownInformationButton">
                                         <li class="border-b border-green-500">
-                                            <a href="{{route('home', $edificio->ID_EDIFICIO)}}"
-                                                class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
-                                                <i class="fa-solid fa-circle-info mr-2"></i> DATOS BÁSICOS
+                                            <a href="javascript:void(0);" onclick="eliminarEdificio({{ $edificio->ID_EDIFICIO}})"
+                                                class="block px-4 py-3 text-gray-700 hover:bg-red-600 hover:text-white">
+                                                <i class="fa-solid fa-trash mr-2"></i> ELIMINAR
                                             </a>
                                         </li>
                                          <li  class="border-b border-green-500">
-                                            <a href="{{route('home', $edificio->ID_EDIFICIO)}}" 
-                                                  class="opacity-50 pointer-events-none block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
+                                            <a href="{{route('lista-viviendas', $edificio->ID_EDIFICIO)}}" 
+                                                class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
                                                 <i class="fa-solid fa-house-chimney-user mr-2"></i> VIVIENDAS
                                             </a>
                                         </li>  
                                         <li  class="border-b border-green-500">
                                              <a href="{{route('home', $edificio->ID_EDIFICIO)}}"
-                                                 class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
-                                                <i class="fa-solid fa-chart-simple  text-2xl"></i> MONITORIZACION VIVIENDA
+                                                class="opacity-50 pointer-events-none block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
+                                                <i class="fa-solid fa-chart-simple  text-2xl"></i> MONITORIZACION 
                                             </a> 
                                         </li>
                                     </ul>
@@ -103,3 +102,12 @@
         </tbody>
     </table>
 </div>
+
+
+<script>
+    function eliminarEdificio(idEdificio) {
+        if (confirm("¿Estás seguro de que deseas eliminar este edificio?")) {
+            window.location.href = "/eliminar-edificio/" + idEdificio;
+        }
+    }
+</script>

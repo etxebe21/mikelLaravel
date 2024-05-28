@@ -10,17 +10,18 @@ class ViviendasController extends Controller
 {
     public function getViviendas(){
         $viviendas= DB::table('viviendas')
-                        // ->join('ficha_edificio', 'ficha_edificio.ID_EDIFICIO', 'edificios.ID_EDIFICIO')
-                        //->join('proyectos', 'proyectos.ID_PROYECTO', 'edificios.ID_PROYECTO')
-                        // ->join('comunidades_autonomas', 'proyectos.ID_AUTONOMIA', 'comunidades_autonomas.ID_COMUNIDAD_AUTONOMA')
-                        // ->join('provincias', 'proyectos.ID_PROVINCIA', 'provincias.ID_PROVINCIA')
-                        // ->join('poblaciones', 'proyectos.ID_POBLACION', 'poblaciones.ID_POBLACION')
-                        ->get();
-
-        // foreach($edificios as $edificio){
-        //     $edificio->VIVIENDAS = $this->getViviendasEdificio($edificio->ID_EDIFICIO);
-        //     $edificio->MONITORIZADAS = 0;
-        // }
+            ->join('edificios', 'edificios.ID_EDIFICIO', 'viviendas.ID_EDIFICIO')
+            ->get();
         return $viviendas;
     }
+
+    public function deleteVivienda($ID_VIVIENDA)
+    {
+        $id_edificio = DB::table('viviendas')->where('ID_VIVIENDA', $ID_VIVIENDA)->value('ID_EDIFICIO');
+        // Eliminar la vivienda
+        DB::table('viviendas')->where('ID_VIVIENDA', $ID_VIVIENDA)->delete();
+
+        return redirect()->route('lista-viviendas')->with('success', 'La vivienda y sus datos relacionados han sido eliminados exitosamente.');
+    }
+
 }

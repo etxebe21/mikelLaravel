@@ -10,17 +10,36 @@ class ProyectosController extends Controller
 {
     public function getProyectos(){
         $proyectos= DB::table('proyectos')
-                        // ->join('ficha_edificio', 'ficha_edificio.ID_EDIFICIO', 'edificios.ID_EDIFICIO')
-                        // ->join('proyectos', 'proyectos.ID_PROYECTO', 'edificios.ID_PROYECTO')
-                        // ->join('comunidades_autonomas', 'proyectos.ID_AUTONOMIA', 'comunidades_autonomas.ID_COMUNIDAD_AUTONOMA')
-                        // ->join('provincias', 'proyectos.ID_PROVINCIA', 'provincias.ID_PROVINCIA')
-                        // ->join('poblaciones', 'proyectos.ID_POBLACION', 'poblaciones.ID_POBLACION')
-                        ->get();
+            ->get();
 
-        // foreach($edificios as $edificio){
-        //     $edificio->VIVIENDAS = $this->getViviendasEdificio($edificio->ID_EDIFICIO);
-        //     $edificio->MONITORIZADAS = 0;
-        // }
         return $proyectos;
     }  
+
+    public function getEdificiosProyecto($ID_PROYECTO)
+    {
+        $edificios = DB::table('edificios')
+            ->join('proyectos', 'edificios.ID_PROYECTO', 'proyectos.ID_PROYECTO')
+            ->where('edificios.ID_PROYECTO', $ID_PROYECTO)
+            ->get();
+
+        return $edificios;
+    }
+
+    public function deleteProyecto($ID_PROYECTO)
+    {
+        // Obtener los IDs de los edificios relacionados con el proyecto
+        $id_edificios = DB::table('edificios')->where('ID_PROYECTO', $ID_PROYECTO)->pluck('ID_EDIFICIO')->toArray();
+
+        // Eliminar las viviendas relacionadas con los edificios
+        DB::table('viviendas')->whereIn('ID_EDIFICIO', $id_edificios)->delete();
+
+        // Eliminar los edificios relacionados con el proyecto
+        DB::table('edificios')->where('ID_PROYECTO', $ID_PROYECTO)->delete();
+
+        // Eliminar el proyecto
+        DB::table('proyectos')->where('ID_PROYECTO', $ID_PROYECTO)->delete();
+
+        return redirect()->route('lista-proyectos')->with('success', 'El proyecto y sus datos relacionados han sido eliminados exitosamente.');
+    }
+
 }

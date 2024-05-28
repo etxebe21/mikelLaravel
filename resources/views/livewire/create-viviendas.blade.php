@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-span-2 px-6 pt-4">
                     <h1 class="mt-6 text-center text-3xl font-medium text-gray-900">
-                        Va a crear una vivienda en Plataforma 3R
+                        Va a crear una vivienda en la plataforma
                     </h1>
                     <p class="mt-6 text-gray-400 text-center font-medium italic leading-relaxed">
                         Podrá definir una serie de apartados para describir las características del mismo.
@@ -317,7 +317,7 @@
                                     <button type="button"
                                     wire:click="guardarVivienda"
                                     class="focus:outline-none w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:ring-green-300 font-medium rounded-lg text-lg block px-5 py-2.5 me-2 mb-2 @if($checkform==false) opacity-50 hover:cursor-none @endif" @if($checkform==false) disabled @endif>
-                                     Guardar edificio</button>
+                                     Guardar vivienda</button>
 
                                 </div>
                             </div>

@@ -9,18 +9,21 @@ use Illuminate\Http\Request;
 class EdificiosController extends Controller
 {
     public function getEdificios(){
-        $edificios= DB::table('edificios')
-                        // ->join('ficha_edificio', 'ficha_edificio.ID_EDIFICIO', 'edificios.ID_EDIFICIO')
-                        ->join('proyectos', 'proyectos.ID_PROYECTO', 'edificios.ID_PROYECTO')
-                        // ->join('comunidades_autonomas', 'proyectos.ID_AUTONOMIA', 'comunidades_autonomas.ID_COMUNIDAD_AUTONOMA')
-                        // ->join('provincias', 'proyectos.ID_PROVINCIA', 'provincias.ID_PROVINCIA')
-                        // ->join('poblaciones', 'proyectos.ID_POBLACION', 'poblaciones.ID_POBLACION')
-                        ->get();
+        $edificios= DB::table('edificios')           
+            ->join('proyectos', 'proyectos.ID_PROYECTO', 'edificios.ID_PROYECTO')
+            ->get();
 
-        // foreach($edificios as $edificio){
-        //     $edificio->VIVIENDAS = $this->getViviendasEdificio($edificio->ID_EDIFICIO);
-        //     $edificio->MONITORIZADAS = 0;
-        // }
         return $edificios;
+    }
+
+    public function deleteEdificio($ID_EDIFICIO)
+    {
+        $id_viviendas = DB::table('viviendas')->where('ID_EDIFICIO', $ID_EDIFICIO)->pluck('ID_EDIFICIO')->toArray();
+        // Eliminar las viviendas relacionadas con los edificios
+        DB::table('viviendas')->whereIn('ID_EDIFICIO', $id_viviendas)->delete();
+        // Eliminar los edificios relacionados con el proyecto
+        DB::table('edificios')->where('ID_EDIFICIO', $ID_EDIFICIO)->delete();
+
+        return redirect()->route('lista-edificios')->with('success', 'El edificio y sus datos relacionados han sido eliminados exitosamente.');
     }
 }

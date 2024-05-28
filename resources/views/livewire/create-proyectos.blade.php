@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-span-2 px-6 pt-4">
                     <h1 class="mt-6 text-center text-3xl font-medium text-gray-900">
-                        Va a configurar un proyecto en Plataforma 3R
+                        Va a configurar un proyecto en la plataforma
                     </h1>
                     <p class="mt-6 text-gray-400 text-center font-medium italic leading-relaxed">
                         Podrá definir una serie de apartados para describir las características del mismo.

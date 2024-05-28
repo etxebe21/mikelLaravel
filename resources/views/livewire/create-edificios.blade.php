@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-span-2 px-6 pt-4">
                     <h1 class="mt-6 text-center text-3xl font-medium text-gray-900">
-                        Va a crear un edificio en Plataforma 3R
+                        Va a crear un edificio en la plataforma
                     </h1>
                     <p class="mt-6 text-gray-400 text-center font-medium italic leading-relaxed">
                         Podrá definir una serie de apartados para describir las características del mismo.
@@ -103,7 +103,7 @@
                                 </div>
                             </div>
                             <div class="grid grid-cols-1">
-                                {{$ID_PROYECTO}}
+                                {{-- {{$ID_PROYECTO}} --}}
                                 <div class="col-span-1 px-4 py-6 mt-6 w-1/3 ">
                                     <label for="CALIFICACION_ENERGETICA" class="block mb-2 text-lg font-medium text-gray-900">Indique la calificación energética del edificio.</label>
                                     <select name="CALIFICACION_ENERGETICA" id="CALIFICACION_ENERGETICA" wire:model="CALIFICACION_ENERGETICA" class="my-5 block w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:shadow-outline">

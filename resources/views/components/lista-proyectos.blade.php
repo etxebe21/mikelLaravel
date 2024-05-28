@@ -23,34 +23,64 @@
                 <th scope="col" class="px-6 py-4 text-xl">CODIGO</th>
                 <th scope="col" class="px-6 py-4 text-xl">DIRECCION</th>
                 <th scope="col" class="px-6 py-4 text-xl">POBLACION</th>
-
-                <th scope="col" class="px-6 py-4 text-xl text-right">
-                   {{--  @if(Auth::user()->tipo_usuario==1)
-                    <a href="{{route('proyecto.import')}}" type="button" class="text-green-700 border border-green-700 hover:bg-green-700 hover:text-white focus:ring-4 focus:outline-none font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center ">
-                        <i class="fa-solid fa-download"></i>
-                        <span class="sr-only">Icon description</span>
-                    </a>
-                    @endif --}}
-                </th>
-            </tr>
+                <th scope="col" class="px-6 py-4 text-xl text-right"></tr>
         </thead>
         <tbody>
-            @foreach ($proyectos as $proyecto )
+            @foreach ($proyectos as $key=>$proyecto )
             <tr class="border-b dark:border-neutral-500">
                 <td class="whitespace-nowrap px-6 py-4 font-medium">{{$proyecto->NOMBRE_PROYECTO}}</td>
-                        <td class="whitespace-nowrap px-6 py-4">{{$proyecto->CODIGO_PROYECTO}}</td>
-                        <td class="whitespace-nowrap px-6 py-4">{{$proyecto->DIRECCION}}</td>
-                        <td class="whitespace-nowrap px-6 py-4">{{$proyecto->POBLACION}}</td>
-                        <td class="whitespace-nowrap px-6 py-4">
-                            {{-- <a
-                            href="{{route('proyecto.show', $proyecto->ID_PROYECTO)}}"
-                            class="inline-block w-full rounded text-center bg-plat-green px-6 pb-2 pt-2.5 font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-green-700  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-green-700  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-green-700  active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                            > <i class="fa-solid fa-circle-info text-2xl"></i></a> --}}
+                <td class="whitespace-nowrap px-6 py-4">{{$proyecto->CODIGO_PROYECTO}}</td>
+                <td class="whitespace-nowrap px-6 py-4">{{$proyecto->DIRECCION}}</td>
+                <td class="whitespace-nowrap px-6 py-4">{{$proyecto->POBLACION}}</td>
+                <td class="whitespace-nowrap px-2 py-4 text-right"> 
+                    <button id="dropdownInformationButton_{{$key}}" data-dropdown-toggle="dropdownInformation_{{$key}}"
+                    class="text-white bg-green-500 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-xl px-5 py-3 text-center inline-flex items-center " type="button">
+                        <i class="fa-solid fa-gear"></i>
+                        <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
+                            </svg>
+                    </button>
+                        <!-- Dropdown menu -->
+                    <div id="dropdownInformation_{{$key}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-96 ">
+                        <div class="px-4 py-3 text-md bg-plat-green text-black ">
+                            <div>OPCIONES</div>
+                            <div class="font-medium text-xs truncate">{{$proyecto->CODIGO_PROYECTO}}</div>
+                        </div>
+                        <ul class="text-lg text-white font-medium" aria-labelledby="dropdownInformationButton">
+                            <li class="border-b border-green-500">
+                                <a href="javascript:void(0);" onclick="eliminarProyecto({{ $proyecto->ID_PROYECTO }})"
+                                    class="block px-4 py-3 text-gray-700 hover:bg-red-600 hover:text-white">
+                                    <i class="fa-solid fa-trash mr-2"></i> ELIMINAR
+                                </a>
+                            </li>
+                                <li  class="border-b border-green-500">
+                                <a href="{{route('lista-edificios-proyecto', $proyecto->ID_PROYECTO)}}" 
+                                    {{-- class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white"> --}}
+                                    class="opacity-50 pointer-events-none block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
+                                    <i class="fa-solid fa-house-chimney-user mr-2"></i> EDIFICIOS
+                                </a>
+                            </li>  
+                            <li  class="border-b border-green-500">
+                                    <a href="{{route('home', $proyecto->ID_PROYECTO)}}"
+                                    class="opacity-50 pointer-events-none block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
+                                    <i class="fa-solid fa-chart-simple  text-2xl"></i> MONITORIZACION 
+                                </a> 
+                            </li>
+                        </ul>
 
-                        </td>
+                    </div>
+                </td> 
 
-                    </tr>
-            @endforeach
+            </tr>
+         @endforeach
         </tbody>
     </table>
 </div>
+
+<script>
+    function eliminarProyecto(idProyecto) {
+        if (confirm("¿Estás seguro de que deseas eliminar este proyecto?")) {
+            window.location.href = "/eliminar-proyecto/" + idProyecto;
+        }
+    }
+</script>
