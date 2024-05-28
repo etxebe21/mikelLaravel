@@ -5,13 +5,12 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\RoutesController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
-Route::post('/login', [LoginController::class, 'login']);
+Route::get('/', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegisterController::class, 'register']);
-//Route::get('/home', [RoutesController::class, 'index'])->name('home');
 
 // Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
    
@@ -26,5 +25,6 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::get('/lista-proyectos', [RoutesController::class, 'verProyectos'])->name('lista-proyectos');
     Route::get('/lista-viviendas', [RoutesController::class, 'verViviendas'])->name('lista-viviendas');
     Route::get('/crear-proyecto', [RoutesController::class, 'crearProyecto'])->name('crear-proyecto');
+    Route::get('/crear-edificio', [RoutesController::class, 'crearEdificio'])->name('crear-edificio');
 
 });

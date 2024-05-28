@@ -67,7 +67,7 @@
                             <button type="submit">Cerrar sesión</button>
                         </form>
                     @else
-                        <a href="/login">Iniciar sesión</a>
+                        <a href="/">Iniciar sesión</a>
                         <a href="/register">Registrarse</a>
                     @endif
                 </div>
