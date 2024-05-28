@@ -22,7 +22,7 @@
 
         <div class="flex items-center gap-4 justify-end mt-8">
             <x-link href="/register">Registrarse</x-link>
-            <x-link href="/examples">Ejemplos</x-link>
+            {{-- <x-link href="/examples">Ejemplos</x-link> --}}
             <x-button type="submit">Iniciar Sesión</x-button> <!-- Cambiar a type="submit" para enviar el formulario -->
         </div>
     </form>

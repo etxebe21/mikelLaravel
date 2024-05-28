@@ -24,9 +24,11 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::get('/lista-edificios', [RoutesController::class, 'verEdificios'])->name('lista-edificios');
     Route::get('/lista-proyectos', [RoutesController::class, 'verProyectos'])->name('lista-proyectos');
     Route::get('/lista-viviendas', [RoutesController::class, 'verViviendas'])->name('lista-viviendas');
+    Route::get('/lista-usuarios', [RoutesController::class, 'verUsuarios'])->name('lista-usuarios');
     Route::get('/crear-proyecto', [RoutesController::class, 'crearProyecto'])->name('crear-proyecto');
     Route::get('/crear-edificio', [RoutesController::class, 'crearEdificio'])->name('crear-edificio');
     Route::get('/crear-vivienda', [RoutesController::class, 'crearVivienda'])->name('crear-vivienda');
+    Route::get('/crear-usuario', [RoutesController::class, 'crearUsuario'])->name('crear-usuario');
 
 
 });

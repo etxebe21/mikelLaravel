@@ -17,7 +17,7 @@
 
         </div>
     </div>
-    @if((Auth::user()->tipo_usuario==1)||(Auth::user()->tipo_usuario==2)){
+    @if((Auth::user()->tipo_usuario==null)){
         @if(isset($ID_PROYECTO))
             @component('components.menu-inferior', ['web'=>Route::currentRouteName(), 'ID_PROYECTO'=>$ID_PROYECTO ])
             @endcomponent

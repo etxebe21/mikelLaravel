@@ -1,8 +1,20 @@
-
+<div class="max-w-7xl mx-auto bg-white bg-opacity-25 rounded-md mb-6" >
+    <div class="grid grid-cols-4  ">
+        <div class="col-span-1 flex justify-center">
+                <x-application-logo class=" rounded-md " />
+        </div>
+        <div class="col-span-3">
+            <h1 class="mt-6 text-center text-3xl font-bold text-green-800">
+                LISTA DE EDIFICIOS            </h1>
+            <div class="mx-auto my-4 flex justify-center">   
+            </div>
+            <p class="mt-6 text-gray-900  text-center italic font-bold  leading-relaxed">
+               Aquí puede ver los edificios vincualdos a la plataforma
+            </p>
+        </div>
+    </div>
+</div>
 <div class="bg-white  rounded shadow-xl p-6 lg:p-8">
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-        LISTA DE EDIFICIOS
-    </h2>
     @isset($edificio->ID_PROYECTO)
         <div class="w-full p-6 grid grid-cols-6">
             <div class="col-span-4 p-2">
@@ -26,7 +38,7 @@
         @endisset
         <table class="min-w-full uppercase text-left text-sm font-light">
             <thead class="border-b font-medium dark:border-neutral-500">
-                <tr class="border-b border-green-200 bg-plat-green text-orange-600">
+                <tr class="border-b border-green-200 bg-plat-green text-green-700">
                     <th scope="col" class="px-6 py-4 text-lg text-center">NOMBRE</th>
                     <th scope="col" class="px-6 py-4 text-lg text-center">DIRECCION</th>
                     <th scope="col" class="px-6 py-4 text-lg text-center">CODIGO_EDIFICIO</th>
@@ -76,12 +88,6 @@
                                                 <i class="fa-solid fa-house-chimney-user mr-2"></i> VIVIENDAS
                                             </a>
                                         </li>  
-                                        <li  class="border-b border-green-500"> 
-                                            <a href="{{route('home', $edificio->ID_EDIFICIO)}}"
-                                                 class="opacity-50 pointer-events-none block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
-                                                <i class="fa-solid fa-table mr-2"></i> CUADROS DE MANDO</a> 
-                                        </li>
-                                        
                                         <li  class="border-b border-green-500">
                                              <a href="{{route('home', $edificio->ID_EDIFICIO)}}"
                                                  class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">

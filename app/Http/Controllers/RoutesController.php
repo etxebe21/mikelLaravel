@@ -37,6 +37,12 @@ class RoutesController extends Controller
        return view('listaViviendas', ['viviendas'=>$viviendas]);
     }
 
+    public function verUsuarios(){
+        $usuarios = (new LoginController)->getUsuarios();
+      
+       return view('listaUsuarios', ['usuarios'=>$usuarios]);
+    }
+
     public function crearProyecto(){
    
         return view('createProyecto');
@@ -52,5 +58,10 @@ class RoutesController extends Controller
         $edificios = (new EdificiosController)->getEdificios();
 
         return view('createVivienda', ['edificios'=>$edificios]);
+    }
+
+    public function crearUsuario(){
+
+        return view('createUsuario');    
     }
 }

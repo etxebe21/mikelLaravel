@@ -46,7 +46,7 @@
     </head>
     <body class="font-sans antialiased">
        
-        <x-nav class="mb-4 w-full">
+        <x-nav class="mb-1 w-full">
             <x-nav.link href="lista-proyectos">Proyectos</x-nav.link>
             <x-nav.link href="lista-edificios">Edificios</x-nav.link>
             <x-nav.link href="lista-viviendas">Viviendas</x-nav.link>
@@ -74,7 +74,7 @@
             </div>
         </x-nav>
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-100" style="background-image: url('img/login.jpg'); background-size: cover; background-position: center;">
            
             <!-- Page Heading -->
             @if (isset($header))

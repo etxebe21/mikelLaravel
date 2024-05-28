@@ -6,57 +6,34 @@
         </div>
         <div class="col-span-3">
             <h1 class="mt-6 text-center text-3xl font-bold text-green-800">
-                LISTA DE VIVIENDAS            </h1>
+                LISTA DE USUARIOS            </h1>
             <div class="mx-auto my-4 flex justify-center">   
             </div>
             <p class="mt-6 text-gray-900  text-center italic font-bold  leading-relaxed">
-               Aquí puede ver las viviendas vinculadas a la plataforma
+               Aquí puede ver los usuarios registrados en la plataforma
             </p>
         </div>
     </div>
 </div>
 <div class="bg-white rounded shadow-xl p-6 lg:p-8">
-    @if(count($viviendas)!=0)
+    
+    @if(count($usuarios)!=0)
     <table class="min-w-full uppercase text-left text-sm font-light">
       <thead class="border-b font-medium dark:border-neutral-500">
           <tr class="border-b border-green-200 bg-plat-green text-green-700">
              
-              <th scope="col" class="px-2 py-4 text-lg">DIRECCION</th>
-              <th scope="col" class="px-2 py-4 text-lg">PISO</th>
-              <th scope="col" class="px-2 py-4 text-lg">CODIGO VIVIENDA</th>
-              <th scope="col" class="px-2 py-4 text-lg"></th>
+              <th scope="col" class="px-4 py-4 text-xl">NOMBRE</th>
+              <th scope="col" class="px-4 py-4 text-xl">EMAIL</th>
+              <th scope="col" class="px-4 py-4 text-xl">TIPO USUARIO</th>
+              <th scope="col" class="px-4 py-4 text-xl"></th>
           </tr>
       </thead>
       <tbody>
-          @foreach ($viviendas as $key=>$vivienda )
+          @foreach ($usuarios as $key=>$usuario )
           <tr class="border-b dark:border-neutral-500">
-                  <td class="whitespace-nowrap px-2 py-1 font-medium hidden">#{{$vivienda->ID_VIVIENDA}}</td>
-                      {{-- @if(isset($ID_PROYECTO))
-                          <td>
-                              <a href="{{route('edificio.info', $vivienda->ID_EDIFICIO)}}"
-                              class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                              @if($vivienda->DIRECCION==null)
-                                   {{$vivienda->CODIGO_EDIFICIO}}
-                              @else
-                                    {{$vivienda->DIRECCION}}
-                              @endif
-                          </a>
-                          </td>
-                      @elseif(isset($ID_EDIFICIO))
-                          <td class="px-2 py-1">
-                              {{$direccion}}
-                          </td>
-                      @else --}}
-                          <td class="px-2 py-1">
-                              {{-- @if($vivienda->DIRECCION==null) --}}
-                              {{$vivienda->CODIGO_VIVIENDA}}
-                              {{-- @else
-                              {{$vivienda->DIRECCION}}
-                              @endif --}}
-                          </td>
-                      {{-- @endif --}}
-                  <td class="px-2 py-1 text-base">{{$vivienda->PISO}}</td>
-                  <td class="px-2 py-1 text-base">{{$vivienda->CODIGO_VIVIENDA}}</td>
+                  <td class="px-2 py-1 text-base">{{$usuario->name}}</td>
+                  <td class="px-2 py-1 text-base">{{$usuario->email}}</td>
+                  <td class="px-2 py-1 text-base">{{$usuario->tipo_usuario}}</td>
                   {{-- <td class="px-2 py-1">
                       <div class="inline-flex w-full rounded-md shadow-sm" role="group">
                           <a href="{{route('vivienda.inquilino', $vivienda->ID_VIVIENDA)}}"
@@ -107,7 +84,7 @@
           <tbody>
       <tr>
           <td colspan="2" class="px-2 py-1 text-xl italic">
-              <h5>No hay viviendas en este edificio</h5>
+              <h5>No hay usuarios</h5>
           </td>
       </tr>
       </tbody>
