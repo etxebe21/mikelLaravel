@@ -7,6 +7,7 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>@yield('title', config('app.name', 'Welcome!'))</title>
+        <link rel="icon" type="image/png" href="img/logo1.png">
         
         <!-- Tailwind CSS and Alpine.js -->
         <script src="https://cdn.tailwindcss.com"></script>

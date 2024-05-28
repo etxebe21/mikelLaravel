@@ -30,7 +30,7 @@
             <a href="{{route('lista-proyectos')}}">
                 <div
                     class="relative overflow-hidden overflow-y-hidden bg-cover bg-no-repeat min-h-[150px] max-h-[150px]"
-                    style="background-image: url({{URL::asset('assets/images/card-bg/newProyecto.jpg')}}); background-size:cover; background-position:center"
+                    style="background-image: url({{URL::asset('img/Proyecto.jpg')}}); background-size:cover; background-position:center"
                     data-te-ripple-init
                     data-te-ripple-color="light">
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
@@ -38,7 +38,7 @@
             </a>
             <div class="p-6">
                 <h5 class="mb-2 text-2xl text-center font-bold leading-tight text-neutral-800 dark:text-neutral-50">
-                Crear Proyectos
+                Proyectos
                 </h5>
                 <p class="my-4 text-base card-text  text-neutral-600 dark:text-neutral-200">
                    Crea un nuevo proyecto y configura todas las opciones
@@ -70,7 +70,7 @@
             <a href="{{route('lista-edificios')}}">
                 <div
                     class="relative overflow-hidden overflow-y-hidden bg-cover bg-no-repeat min-h-[150px] max-h-[150px]"
-                    style="background-image: url({{URL::asset('assets/images/card-bg/building.jpg')}}); background-size:cover; background-position:center 90%"
+                    style="background-image: url({{URL::asset('img/edificio.jpg')}}); background-size:cover; background-position:center 90%"
                     data-te-ripple-init
                     data-te-ripple-color="light">
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
@@ -78,7 +78,7 @@
             </a>
             <div class="p-6">
                 <h5 class="mb-2 text-2xl text-center font-bold leading-tight text-neutral-800 dark:text-neutral-50">
-                Añadir Edificios
+                Edificios
                 </h5>
                 <p class="my-4 text-base card-text  text-neutral-600 dark:text-neutral-200">
                     Añadir y asignar un edificio a un proyecto ya existente
@@ -110,7 +110,7 @@
             <a href="{{route('lista-viviendas')}}">
                 <div
                     class="relative overflow-hidden overflow-y-hidden bg-cover bg-no-repeat min-h-[150px] max-h-[150px]"
-                    style="background-image: url({{URL::asset('assets/images/card-bg/costerehabilitacion.jpg')}}); background-size:cover; background-position:center"
+                    style="background-image: url({{URL::asset('img/casa.jpg')}}); background-size:cover; background-position:center"
                     data-te-ripple-init
                     data-te-ripple-color="light">
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
@@ -121,7 +121,7 @@
                    Viviendas
                 </h5>
                 <p class="my-4 text-base card-text  text-neutral-600 dark:text-neutral-200">
-                    Asignar viviendas y usuarios de vivienda a un edificio ya creado
+                    Asignar una vivienda a un edificio ya existente
                 </p>
                 <div class="mx-auto my-5 flex justify-center">
                     <span class="inline-block h-1 w-40 rounded-full bg-plat-orange"></span>
@@ -149,7 +149,7 @@
             <a href="{{route('lista-usuarios')}}">
                 <div
                     class="relative overflow-hidden overflow-y-hidden bg-cover bg-no-repeat min-h-[150px] max-h-[150px]"
-                    style="background-image: url({{URL::asset('assets/images/card-bg/work-3.jpg')}}); background-size:cover; background-position:center"
+                    style="background-image: url({{URL::asset('img/user.jpg')}}); background-size:cover; background-position:center"
                     data-te-ripple-init
                     data-te-ripple-color="light">
                     <div class="absolute bottom-0 left-0 right-0 top-0 h-full w-full overflow-hidden bg-[hsla(0,0%,98%,0.15)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100"></div>
@@ -161,7 +161,7 @@
                 Usuarios
                 </h5>
                 <p class="my-4 text-base card-text card-text  text-neutral-600 dark:text-neutral-200">
-                Crear y gestionar usuarios para las tareas de gestión de examples y edificios
+                Crear y gestionar usuarios para gestión de proyectos y edificios
                 </p>
                 <div class="mx-auto my-5 flex justify-center">
                     <span class="inline-block h-1 w-40 rounded-full bg-plat-orange"></span>

@@ -4,7 +4,7 @@
             <div class="max-w-8xl mx-auto grid grid-cols-3 py-4">
                 <div class="col-span-1">
                     <div class="mt-6">
-                        <img src="{{ URL::asset('img/logo1.jpg') }}" class="block h-24 mx-auto w-auto" alt="">
+                        <img src="{{ URL::asset('img/logo1.png') }}" class="block h-24 mx-auto w-auto" alt="">
                     </div>
                 </div>
                 <div class="col-span-2 px-6 pt-4">
@@ -29,7 +29,7 @@
             <div class="max-w-8xl mx-auto grid grid-cols-3 py-4">
                 <div class="col-span-1">
                     <div class="mt-6">
-                        <img src="{{ URL::asset('img/logo1.jpg') }}" class="block h-24 mx-auto w-auto" alt="">
+                        <img src="{{ URL::asset('img/logo1.png') }}" class="block h-24 mx-auto w-auto" alt="">
                     </div>
                 </div>
                 <div class="col-span-2 mb-6 py-4">

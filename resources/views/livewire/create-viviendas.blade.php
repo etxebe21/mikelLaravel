@@ -4,7 +4,7 @@
             <div class="max-w-8xl mx-auto grid grid-cols-3 py-4">
                 <div class="col-span-1">
                     <div class="mt-6">
-                        <img src="{{ URL::asset('img/logo1.jpg') }}" class="block h-24 mx-auto w-auto" alt="">
+                        <img src="{{ URL::asset('img/logo1.png') }}" class="block h-24 mx-auto w-auto" alt="">
                     </div>
                 </div>
                 <div class="col-span-2 px-6 pt-4">
@@ -29,7 +29,7 @@
             <div class="max-w-8xl mx-auto grid grid-cols-3 py-4">
                 <div class="col-span-1">
                     <div class="mt-6">
-                        <img src="{{ URL::asset('img/logo1.jpg') }}" class="block h-24 mx-auto w-auto" alt="">
+                        <img src="{{ URL::asset('img/logo1.png') }}" class="block h-24 mx-auto w-auto" alt="">
                     </div>
                 </div>
                 <div class="col-span-2 mb-6 py-4">
@@ -77,7 +77,7 @@
             <div class="max-w-6xl mx-auto py-4 ">
                 <div class="mt-1 min-w-full md:mt-0 bg-white p-4">
                     <div class="space-y-6 bg-white px-4 py-1 sm:p-6">
-                        <img src="{{ URL::asset('img/logo1.jpg') }}" class="block h-24 mx-auto w-auto" alt="">
+                        <img src="{{ URL::asset('img/logo1.png') }}" class="block h-24 mx-auto w-auto" alt="">
                         <h2 class="text-2xl font-extrabold text-center">Seleccionar piso y código de vivienda</h2>
                         <p class=" my-4 text-lg text-gray-500">A continuación podrá seleccionar el piso y el código de la vivienda.</p>
                         
@@ -121,7 +121,7 @@
             <div class="max-w-8xl mx-auto grid grid-cols-3 py-2 ">
                 <div class="col-span-1 ">
                     <div class="mt-6">
-                        <img  src="{{URL::asset('img/logo1.jpg')}}" class="block h-24 mx-auto w-auto" alt="">
+                        <img  src="{{URL::asset('img/logo1.png')}}" class="block h-24 mx-auto w-auto" alt="">
                     </div>
                 </div>
                 <div class="col-span-2 mb-2 py-2">
@@ -191,7 +191,7 @@
             <div class="max-w-8xl mx-auto grid grid-cols-3 py-2 ">
                 <div class="col-span-1 ">
                     <div class="mt-6">
-                        <img  src="{{URL::asset('img/logo1.jpg')}}" class="block h-24 mx-auto w-auto" alt="">
+                        <img  src="{{URL::asset('img/logo1.png')}}" class="block h-24 mx-auto w-auto" alt="">
                     </div>
                 </div>
                 <div class="col-span-2 mb-2 py-1">
