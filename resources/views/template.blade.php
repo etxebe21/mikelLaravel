@@ -10,7 +10,7 @@
         
         <!-- Tailwind CSS and Alpine.js -->
         <script src="https://cdn.tailwindcss.com"></script>
-        <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+        {{-- <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script> --}}
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -41,15 +41,16 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
-        
-        {{-- @livewireStyles --}}
+       
+        @livewireStyles
     </head>
     <body class="font-sans antialiased">
        
         <x-nav class="mb-4 w-full">
-            <x-nav.link href="#">Cursos</x-nav.link>
-            <x-nav.link href="#">Planes</x-nav.link>
-            <x-nav.link href="#">Documentos</x-nav.link>
+            <x-nav.link href="lista-proyectos">Proyectos</x-nav.link>
+            <x-nav.link href="lista-edificios">Edificios</x-nav.link>
+            <x-nav.link href="lista-viviendas">Viviendas</x-nav.link>
+
             <div class="dropdown">
                 <span onclick="toggleDropdown()" class="dropdown-toggle">
                     @if(auth()->check())
@@ -124,6 +125,20 @@
                     "language": tableLang
                 });
             });
+
+            function toggleDropdown() {
+        var dropdownMenu = document.getElementById("userDropdown");
+        dropdownMenu.classList.toggle("hidden");
+    }
+
+    // Cerrar el menú cuando se hace clic en cualquier lugar fuera del menú
+    window.onclick = function(event) {
+        var dropdownMenu = document.getElementById("userDropdown");
+        if (dropdownMenu.classList.contains("hidden") === false && !event.target.matches('.dropdown-toggle')) {
+            dropdownMenu.classList.add("hidden");
+        }
+    }
+
         </script>
     </body>
 </html>

@@ -1,47 +1,18 @@
 @extends('template')
 
 @section('content')
-<!-- Barra de navegación principal -->
-<x-nav class="mb-4">
-    <x-nav.link href="#">Cursos</x-nav.link>
-    <x-nav.link href="#">Planes</x-nav.link>
-    <x-nav.link href="#">Documentos</x-nav.link>
-    <div class="dropdown">
-        <span onclick="toggleDropdown()" class="dropdown-toggle">
-            @if(auth()->check())
-                {{ auth()->user()->email }}
-            @else
-                Guest
-            @endif
-        </span>
-        <div id="userDropdown" class="dropdown-menu hidden">
-            @if(auth()->check())
-                <a href="#">Ir al perfil</a>
-                <form action="{{ route('logout') }}" method="POST">
-                    @csrf
-                    <button type="submit">Cerrar sesión</button>
-                </form>
-            @else
-                <a href="/login">Iniciar sesión</a>
-                <a href="/register">Registrarse</a>
-            @endif
-        </div>
-    </div>
-</x-nav>
 
 
 <div class="max-w-7xl mx-auto bg-white rounded-md ">
-    <div class="grid grid-cols-3 py-4 ">
-        <div class="col-span-1 ">
-            <div class="mt-6 flex justify-center">
-                {{-- <x-application-logo class="block h-12 w-auto" /> --}}
-            </div>
+    <div class="grid grid-cols-4  ">
+        <div class="col-span-1 flex justify-center">
+                <x-application-logo class="block " />
         </div>
-        <div class="col-span-2">
-            <h1 class="mt-6 text-center text-3xl font-bold text-neutral-900">
+        <div class="col-span-3">
+            <h1 class="mt-6 text-center text-3xl font-bold text-green-800">
                 Opciones de gestión
             </h1>
-            <div class="mx-auto my-5 flex justify-center">
+            <div class="mx-auto my-4 flex justify-center">
                 <span class="inline-block h-1 w-40 rounded-full bg-plat-orange"></span>
                 <span class="mx-1 inline-block h-1 w-3 rounded-full bg-plat-orange"></span>
                 <span class="inline-block h-1 w-1 rounded-full bg-plat-orange"></span>
@@ -52,7 +23,7 @@
         </div>
     </div>
 </div>
-<div class="grid grid-cols-8 md:grid-cols-8 gap-2 lg:gap-8 p-6 lg:p-8">
+<div class="grid grid-cols-8 md:grid-cols-8 gap-2 lg:gap-8 p-6 lg:p-8 ">
     <div class="col-span-2">
         <div
             class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
@@ -79,13 +50,13 @@
                 </div>
                 <div class="flex">
                     <a
-                    href="{{route('examples')}}"
+                    href="{{route('lista-proyectos')}}"
                     class="inline-block w-full rounded mx-2 text-center bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-green-700  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-green-700  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-green-700  active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                     data-te-ripple-init
                     data-te-ripple-color="light">Ver</a>
 
                     <a
-                    href="{{route('examples')}}"
+                    href="{{route('crear-proyecto')}}"
                     class="inline-block w-full rounded mx-2 text-center bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-green-700  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-green-700  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-green-700  active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                     data-te-ripple-init
                     data-te-ripple-color="light">Crear</a>
@@ -159,7 +130,7 @@
                 </div>
                 <div class="flex">
                     <a
-                    href="{{route('examples')}}"
+                    href="{{route('lista-viviendas')}}"
                     class="inline-block w-full rounded mx-2 text-center bg-green-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-green-700  hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-green-700  focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-green-700  active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
                     data-te-ripple-init
                     data-te-ripple-color="light">Ver</a>
@@ -214,7 +185,7 @@
             </div>
     </div>
 
-    <div class="col-span-2">
+    {{-- <div class="col-span-2">
         <div
             class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
             <a href="{{route('examples')}}">
@@ -358,7 +329,9 @@
             </div>
         </div>
 </div>
- 
+<div class="mt-16 mb-16">
+</div> --}}
+@endsection
 
 
 
@@ -376,4 +349,3 @@
         }
     }
 </script>
-@endsection

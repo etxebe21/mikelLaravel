@@ -25,8 +25,21 @@ class RoutesController extends Controller
        
     public function verProyectos(){
          $proyectos = (new proyectosController)->getProyectos();
-        //$edificios = (new EdificiosController)->getEdificios();
+        $edificios = (new EdificiosController)->getEdificios();
         return view('listaProyectos', ['proyectos'=>$proyectos]);
+    }
+
+    public function verViviendas(){
+        $proyectos = (new proyectosController)->getProyectos();
+       $edificios = (new EdificiosController)->getEdificios();
+       $viviendas = (new ViviendasController)->getViviendas();
+
+       return view('listaViviendas', ['viviendas'=>$viviendas]);
+    }
+
+    public function crearProyecto(){
+   
+        return view('createProyecto');
     }
 
 }

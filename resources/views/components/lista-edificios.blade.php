@@ -1,8 +1,5 @@
-@extends('template')
 
-@section('content')
-
-<div class="bg-white rounded shadow-xl p-6 lg:p-8">
+<div class="bg-white  rounded shadow-xl p-6 lg:p-8">
     <h2 class="font-semibold text-xl text-gray-800 leading-tight">
         LISTA DE EDIFICIOS
     </h2>
@@ -37,7 +34,7 @@
                     <th scope="col" class="px-6 py-4 text-lg text-center">AÑO</th>
                     <th scope="col" class="px-2 py-4 text-lg text-center">CALIFICACION</th>
                     <th scope="col" class="px-2 py-4 text-lg text-center">VIVIENDAS</th>
-                    {{-- <th scope="col" class="px-2 py-4 text-lg text-center">MONIT.</th> --}}
+                    <th scope="col" class="px-2 py-4 text-lg text-center"></th>
                     <th scope="col" class="px-2 py-4 text-lg text-center"></th>
                 </tr>
             </thead>
@@ -100,4 +97,3 @@
         </tbody>
     </table>
 </div>
-@endsection

@@ -1,16 +1,15 @@
 @extends('template')
 
 @section('content')
-    
     <div class="py-1 z-0 " style="background-image:url('{{URL::asset("img/7.png")}}'); background-size:cover; background-position:center">
         
-        <div class="min-w-full min-h-screen grid grid-cols-6 bg-white bg-opacity-25 mx-auto sm:px-6 lg:px-8 ">
-            <div class="overflow-hidden col-span-6 col-start-1 p-2">
+        <div class="min-w-full min-h-screen grid grid-cols-8 bg-white bg-opacity-25 mx-auto sm:px-6 lg:px-8 ">
+            <div class="overflow-hidden col-span-6 col-start-2 p-2">
                 @isset($ID_PROYECTO)
-                    @component('components.lista-edificios', ['edificios'=>$edificios])
+                    @component('components.lista-proyectos', ['proyectos'=>$proyectos])
                     @endcomponent
                 @else
-                    @component('components.lista-edificios', ['edificios'=>$edificios])
+                    @component('components.lista-proyectos', ['proyectos'=>$proyectos])
                     @endcomponent
                  @endisset
             </div>
