@@ -25,6 +25,7 @@ class ProyectosController extends Controller
         return $edificios;
     }
 
+
     public function deleteProyecto($ID_PROYECTO)
     {
         // Obtener los IDs de los edificios relacionados con el proyecto

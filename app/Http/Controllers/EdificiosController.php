@@ -26,4 +26,14 @@ class EdificiosController extends Controller
 
         return redirect()->route('lista-edificios')->with('success', 'El edificio y sus datos relacionados han sido eliminados exitosamente.');
     }
+
+    public function getViviendasEdificios($ID_EDIFICIO)
+    {
+        $viviendas = DB::table('viviendas')
+            ->join('edificios', 'viviendas.ID_EDIFICIO', 'edificios.ID_EDIFICIO')
+            ->where('viviendas.ID_EDIFICIO', $ID_EDIFICIO)
+            ->get();
+
+        return $viviendas;
+    }
 }

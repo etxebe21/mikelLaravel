@@ -27,7 +27,7 @@ class RoutesController extends Controller
     public function verEdificiosProyecto($ID_PROYECTO){
         $proyectos = (new proyectosController)->getProyectos();
         $edificios = (new ProyectosController)->getEdificiosProyecto($ID_PROYECTO);
-        return view('listaEdificios', ['edificios'=>$edificios, 'proyectos'=>$proyectos, 'ID_PROYECTO' => $ID_PROYECTO]);
+        return view('listaEdificios', ['edificios'=>$edificios, 'ID_PROYECTO'=> $ID_PROYECTO]);
         
     }
 
@@ -43,6 +43,14 @@ class RoutesController extends Controller
        $viviendas = (new ViviendasController)->getViviendas();
 
        return view('listaViviendas', ['viviendas'=>$viviendas]);
+    }
+
+    public function verViviendasEdificio($ID_EDIFICIO){
+        $proyectos = (new proyectosController)->getProyectos();
+       $edificios = (new EdificiosController)->getEdificios();
+       $viviendas = (new EdificiosController)->getViviendasEdificios($ID_EDIFICIO);
+
+       return view('listaViviendas', ['viviendas'=>$viviendas, 'ID_EDIFICIO' => $ID_EDIFICIO]);
     }
 
     public function verUsuarios(){

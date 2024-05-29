@@ -54,11 +54,10 @@
                                 </a>
                             </li>
                                 <li  class="border-b border-green-500">
-                                <a href="{{route('lista-edificios-proyecto', $proyecto->ID_PROYECTO)}}" 
-                                    {{-- class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white"> --}}
-                                    class="opacity-50 pointer-events-none block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
-                                    <i class="fa-solid fa-house-chimney-user mr-2"></i> EDIFICIOS
-                                </a>
+                                    <a href="{{route('lista-edificios-proyecto', $proyecto->ID_PROYECTO)}}" 
+                                        class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
+                                        <i class="fa-solid fa-house-chimney-user mr-2"></i> EDIFICIOS
+                                    </a>
                             </li>  
                             <li  class="border-b border-green-500">
                                     <a href="{{route('home', $proyecto->ID_PROYECTO)}}"

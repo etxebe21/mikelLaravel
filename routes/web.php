@@ -25,9 +25,10 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::get('/examples', function(){return view('examples');})->name('examples');
 
     Route::get('/lista-edificios', [RoutesController::class, 'verEdificios'])->name('lista-edificios');
-    Route::get('/lista-edificios1', [RoutesController::class, 'verEdificiosProyecto'])->name('lista-edificios-proyecto');
+    Route::get('/lista-edificios/{id}', [RoutesController::class, 'verEdificiosProyecto'])->name('lista-edificios-proyecto');
     Route::get('/lista-proyectos', [RoutesController::class, 'verProyectos'])->name('lista-proyectos');
     Route::get('/lista-viviendas', [RoutesController::class, 'verViviendas'])->name('lista-viviendas');
+    Route::get('/lista-viviendas/{id}', [RoutesController::class, 'verViviendasEdificio'])->name('lista-viviendas-edificio');    
     Route::get('/lista-usuarios', [RoutesController::class, 'verUsuarios'])->name('lista-usuarios');
 
     Route::get('/crear-proyecto', [RoutesController::class, 'crearProyecto'])->name('crear-proyecto');
