@@ -62,10 +62,9 @@
                 </span>
                 <div id="userDropdown" class="dropdown-menu hidden">
                     @if(auth()->check())
-                        <a href="#">Ir al perfil</a>
                         <form action="{{ route('logout') }}" method="POST">
                             @csrf
-                            <button type="submit">Cerrar sesión</button>
+                            <button type="submit"><i class="fa-solid fa-power-off"></i> Cerrar sesión</button>
                         </form>
                     @else
                         <a href="/">Iniciar sesión</a>
