@@ -21,7 +21,7 @@
       <thead class="border-b font-medium dark:border-neutral-500">
           <tr class="border-b border-green-200 bg-plat-green text-green-700">
              
-              <th scope="col" class="px-2 py-4 text-lg">DIRECCION</th>
+              <th scope="col" class="px-2 py-4 text-lg">ID_EDIFICIO</th>
               <th scope="col" class="px-2 py-4 text-lg">PISO</th>
               <th scope="col" class="px-2 py-4 text-lg">CODIGO VIVIENDA</th>
               <th scope="col" class="px-2 py-4 text-lg"></th>
@@ -30,7 +30,7 @@
       <tbody>
           @foreach ($viviendas as $key=>$vivienda )
           <tr class="border-b dark:border-neutral-500">
-                  <td class="whitespace-nowrap px-2 py-1 font-medium hidden">#{{$vivienda->ID_VIVIENDA}}</td>
+                  <td class="whitespace-nowrap px-2 py-1 font-medium hidden">{{$vivienda->ID_VIVIENDA}}</td>
                       {{-- @if(isset($ID_PROYECTO))
                           <td>
                               <a href="{{route('edificio.info', $vivienda->ID_EDIFICIO)}}"
@@ -49,7 +49,7 @@
                       @else --}}
                           <td class="px-2 py-1">
                               {{-- @if($vivienda->DIRECCION==null) --}}
-                              {{$vivienda->CODIGO_VIVIENDA}}
+                              {{$vivienda->ID_EDIFICIO}}
                               {{-- @else
                               {{$vivienda->DIRECCION}}
                               @endif --}}
