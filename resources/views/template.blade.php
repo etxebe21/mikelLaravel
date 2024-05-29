@@ -52,7 +52,7 @@
             <x-nav.link href="lista-edificios">Edificios</x-nav.link>
             <x-nav.link href="lista-viviendas">Viviendas</x-nav.link>
 
-            <div class="dropdown">
+            <div class="dropdown ml-14">
                 <span onclick="toggleDropdown()" class="dropdown-toggle">
                     @if(auth()->check())
                         {{ auth()->user()->email }}

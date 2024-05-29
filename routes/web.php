@@ -45,6 +45,10 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::post('/actualizar-proyecto/{ID_PROYECTO}', [ProyectoSController::class, 'update'])->name('actualizar-proyecto');
     Route::get('/editar-edificio/{ID_EDIFICIO}', [EdificiosController::class, 'edit'])->name('editar-edificio');
     Route::post('/actualizar-edificio/{ID_EDIFICIO}', [EdificiosController::class, 'update'])->name('actualizar-edificio');
+    Route::get('/editar-viviendas/{ID_VIVIENDA}', [ViviendasController::class, 'edit'])->name('editar-vivienda');
+    Route::post('/viviendas/{ID_VIVIENDA}', [ViviendasController::class, 'update'])->name('actualizar-vivienda');
+    Route::get('/usuarios-editar/{id}', [RegisterController::class, 'editar'])->name('editar-usuario');
+    Route::post('/usuarios/{id}/actualizar', [RegisterController::class, 'actualizar'])->name('actualizar-usuario');
 
 
 });

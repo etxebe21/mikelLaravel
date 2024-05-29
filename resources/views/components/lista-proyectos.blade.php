@@ -62,7 +62,7 @@
                             <li  class="border-b border-green-500">
                                 <a href="{{route('editar-proyecto', $proyecto->ID_PROYECTO)}}" 
                                     class="block px-4 py-3 text-gray-700 hover:bg-yellow-600 hover:text-white">
-                                    <i class="fa-solid fa-house-chimney-user mr-2"></i> EDITAR
+                                    <i class="fa-solid fa-pen-to-square mr-2"></i> EDITAR 
                                 </a>
                             </li>  
                             <li  class="border-b border-green-500">

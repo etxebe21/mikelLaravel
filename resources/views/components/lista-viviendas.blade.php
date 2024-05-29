@@ -78,7 +78,12 @@
                                     <i class="fa-solid fa-trash mr-2"></i> ELIMINAR
                                 </a>
                             </li>
-                              
+                            <li  class="border-b border-green-500">
+                                <a href="{{route('editar-vivienda', $vivienda->ID_VIVIENDA)}}" 
+                                    class="block px-4 py-3 text-gray-700 hover:bg-yellow-600 hover:text-white">
+                                    <i class="fa-solid fa-pen-to-square mr-2"></i> EDITAR 
+                                </a>
+                            </li>
                             <li  class="border-b border-green-500">
                                  <a href="{{route('home')}}"
                                     class="opacity-50 pointer-events-none block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">

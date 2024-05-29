@@ -26,6 +26,7 @@
               <th scope="col" class="px-4 py-4 text-xl">EMAIL</th>
               <th scope="col" class="px-4 py-4 text-xl">TIPO USUARIO</th>
               <th scope="col" class="px-4 py-4 text-xl"></th>
+              <th scope="col" class="px-4 py-4 text-xl"></th>
           </tr>
       </thead>
       <tbody>
@@ -36,10 +37,16 @@
                   <td class="px-2 py-1 text-base">{{$usuario->tipo_usuario}}</td>
                   <td class="px-2 py-1">
                         <a href="javascript:void(0);" onclick="eliminarUsuario({{ $usuario->id}})"
-                            class="flex flex-col w-2/3 text-center  px-4 py-2.5 text-base font-medium text-white bg-red-600 border border-white rounded-md hover:bg-red-700 focus:z-10 focus:ring-2 focus:ring-red-700  ">
-                            <i class="fa-solid fa-trash"></i>
+                            class="flex flex-col w-2/3 text-center  px-4 py-2.5  font-medium text-white bg-red-600 border border-white rounded-md hover:bg-red-700 focus:z-10 focus:ring-2 focus:ring-red-700  ">
+                            <i class="fa-solid fa-trash"></i>BORRAR
                         </a>
                   </td> 
+                  <td class="px-2 py-1">
+                    <a href="{{route('editar-usuario', $usuario->id)}}" 
+                        class="flex flex-col w-2/3 text-center  px-4 py-2.5  font-medium text-white bg-yellow-600 border border-white rounded-md hover:bg-orange-700 focus:z-10 focus:ring-2 focus:ring-orange-700  ">                         
+                        <i class="fa-solid fa-pen-to-square mr-2"></i> EDITAR 
+                    </a>
+                  </td>
               </tr>
           @endforeach
       </tbody>

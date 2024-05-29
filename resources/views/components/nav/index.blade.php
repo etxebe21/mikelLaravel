@@ -4,7 +4,11 @@
     ])
 }}>
 
-    <a href="/home" class="text-2xl text-gray-600 hover:text-gray-900 "> Home</a>
+<a href="/home" class="text-2xl font-bold text-green-700 hover:text-green-900 flex items-center">
+    <img src="{{ URL::asset('img/logo1.png') }}" alt="Icono de inicio" class="w-16 h-10 mr-2">
+    Home
+</a>
+
 
     <ul class="flex gap-2 flex-col sm:flex-row">
         {{ $slot }}
