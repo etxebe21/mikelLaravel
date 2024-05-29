@@ -43,4 +43,33 @@ class ProyectosController extends Controller
         return redirect()->route('lista-proyectos')->with('success', 'El proyecto y sus datos relacionados han sido eliminados exitosamente.');
     }
 
+    public function edit($ID_PROYECTO)
+    {
+        $proyecto = DB::table('proyectos')->where('ID_PROYECTO', $ID_PROYECTO)->first();
+
+        return view('editarProyecto', ['proyecto' => $proyecto]);
+    }
+
+    public function update(Request $request, $ID_PROYECTO)
+    {
+        $request->validate([
+            'NOMBRE_PROYECTO' => 'required|string|max:255',
+            'CODIGO_PROYECTO' => 'required|string|max:255',
+            'DIRECCION' => 'required|string|max:255',
+            'POBLACION' => 'required|string|max:255',
+            'N_EDIFICIOS' => 'required|int|max:10,'
+        ]);
+
+        DB::table('proyectos')
+            ->where('ID_PROYECTO', $ID_PROYECTO)
+            ->update([
+                'NOMBRE_PROYECTO' => $request->input('NOMBRE_PROYECTO'),
+                'CODIGO_PROYECTO' => $request->input('CODIGO_PROYECTO'),
+                'DIRECCION' => $request->input('DIRECCION'),
+                'POBLACION' => $request->input('POBLACION'),
+                'N_EDIFICIOS' => $request->input('N_EDIFICIOS'),
+            ]);
+
+        return redirect()->route('lista-proyectos')->with('success', 'Proyecto actualizado exitosamente.');
+    }
 }

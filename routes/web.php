@@ -41,5 +41,8 @@ Route::post('/register', [RegisterController::class, 'register']);
     Route::get('/eliminar-vivienda/{id}', [ViviendasController::class, 'deleteVivienda'])->name('eliminar-vivienda');
     Route::get('/eliminar-usuario/{id}', [LoginController::class, 'deleteUsuario'])->name('eliminar-usuario');
 
+    Route::get('/editar-proyecto/{ID_PROYECTO}', [ProyectoSController::class, 'edit'])->name('editar-proyecto');
+    Route::post('/actualizar-proyecto/{ID_PROYECTO}', [ProyectoSController::class, 'update'])->name('actualizar-proyecto');
+
 
 });

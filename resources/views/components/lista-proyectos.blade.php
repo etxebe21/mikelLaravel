@@ -53,11 +53,17 @@
                                     <i class="fa-solid fa-trash mr-2"></i> ELIMINAR
                                 </a>
                             </li>
-                                <li  class="border-b border-green-500">
-                                    <a href="{{route('lista-edificios-proyecto', $proyecto->ID_PROYECTO)}}" 
-                                        class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
-                                        <i class="fa-solid fa-house-chimney-user mr-2"></i> EDIFICIOS
-                                    </a>
+                            <li  class="border-b border-green-500">
+                                <a href="{{route('lista-edificios-proyecto', $proyecto->ID_PROYECTO)}}" 
+                                    class="block px-4 py-3 text-gray-700 hover:bg-green-600 hover:text-white">
+                                    <i class="fa-solid fa-house-chimney-user mr-2"></i> EDIFICIOS
+                                </a>
+                            </li>  
+                            <li  class="border-b border-green-500">
+                                <a href="{{route('editar-proyecto', $proyecto->ID_PROYECTO)}}" 
+                                    class="block px-4 py-3 text-gray-700 hover:bg-yellow-600 hover:text-white">
+                                    <i class="fa-solid fa-house-chimney-user mr-2"></i> EDITAR
+                                </a>
                             </li>  
                             <li  class="border-b border-green-500">
                                     <a href="{{route('home', $proyecto->ID_PROYECTO)}}"
