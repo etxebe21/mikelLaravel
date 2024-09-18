@@ -15,22 +15,29 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
+        // Validar los datos de entrada
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'tipo_usuario' => 'required|in:1,2', // Asegúrate de que el valor sea uno de los permitidos
         ]);
-
+    
+        // Crear el nuevo usuario
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'tipo_usuario' => $request->tipo_usuario, // Agregar el tipo de usuario
         ]);
-
+    
+        // Iniciar sesión del usuario
         Auth::login($user);
-
+    
+        // Redirigir a la página de inicio
         return redirect('/home');
     }
+    
 
     public function editar($id)
     {
